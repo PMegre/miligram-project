@@ -1,13 +1,90 @@
+.site-kit {
+  --global-color-black: #000000;
+  --global-color-white: #ffffff;
+  --global-color-blue: #006eff;
+  --global-color-dark-green: #172f28;
+  --global-color-green: #004536;
+  --global-color-grey: #494949;
+  --global-color-light-grey: #bfbbba;
+  --global-color-marble: #f5f4f4;
+  --global-typography-primary-font-family: "ltc-bodoni-175";
+  --global-typography-text-font-family: "Roboto";
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--global-typography-text-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.white__container {
+  background: linear-gradient(to top, #fff 0%, #fff 50%, #000 50%, #000 100%);
+  background-size: 100% 200%;
+  background-position: bottom;
+  transition: background-position 0.5s, color 0.5s;
+  overflow: hidden;
+}
+
+.real__mode__on .white__container {
+  background-position: top;
+  /* Start from the bottom */
+}
+
+.black__container {
+  background-color: var(--global-color-white);
+  background: linear-gradient(to top, #000 0%, #000 50%, #fff 50%, #fff 100%);
+  background-size: 100% 200%;
+  background-position: bottom;
+  transition: background-position 0.5s, color 0.5s;
+  overflow: hidden;
+}
+
+.real__mode__on .black__container {
+  background-position: top;
+}
+
+.green__container {
+  background-color: var(--global-color-green);
+}
+
+.default__padding {
+  padding: 60px;
+}
+
+.first__block__padding {
+  padding: 200px 60px 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--global-typography-primary-font-family);
+}
+
+.site-kit h1 {
+  font-size: 80px;
+}
+
+.site-kit h2 {
+  font-size: 60px;
+}
+
+.site-kit h3 {
+  font-size: 40px;
+}
+
+.site-kit h4 {
+  font-size: 30px;
+}
+
+.site-kit h5 {
+  font-size: 20px;
+}
+
+.site-kit h6 {
+  font-size: 16px;
 }

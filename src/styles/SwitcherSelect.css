@@ -1,0 +1,46 @@
+ .switch {
+    position: relative;
+     width: fit-content;
+}
+
+.switch-input {
+    display: none;
+}
+
+.switch-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-color: #666;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 10px;
+    padding: 8px;
+}
+
+.switch-label::after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.switch-input:checked + .switch-label {
+    background-color: white;
+}
+
+.switch-input:checked + .switch-label::after {
+    transform: translateX(30px);
+}
+.switch-handle {
+    font-size: 12px;
+    padding: 6px 8px;
+    color: white;
+}

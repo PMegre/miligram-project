@@ -1,0 +1,112 @@
+.text__wrapper {
+    font-family: "ltc-bodoni-175", Sans-serif;
+    font-size: 170px;
+    font-weight: 400;
+    line-height: 1.1em;
+    color: var(--global-color-black);
+}
+
+.real__mode__on .text__wrapper {
+    color: var(--global-color-white);
+}
+
+.dynamic__wrapper {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    transition: all .5s ease;
+    margin-left: 5px;
+    height: 183px;
+    border-right: 2px solid var(--global-color-black);
+    color: var(--global-color-black);
+    text-align: left;
+    font-family: "ltc-bodoni-175", Sans-serif;
+    font-size: 170px;
+    font-weight: 400;
+    line-height: 1em;
+    font-style: italic;
+    margin-bottom: -43px;
+}
+.real__mode__on .dynamic__wrapper {
+    border-right: 2px solid var(--global-color-white);
+    color: var(--global-color-white);
+}
+.dynamic__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.dynamic__text.active {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.video__container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 600px;
+    height: 60vh;
+}
+.video__container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.green__container.extra__padding {
+    padding: 60px 25%;
+    min-height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+.green__container::after {
+    content: "olá";
+    display: block;
+    color: rgba(255, 255, 255, .1);
+    font-family: var(--global-typography-primary-font-family);
+    position: absolute;
+    font-size: 600px;
+    line-height: 1em;
+    bottom: -160px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.green__container h3,
+.green__container h5,
+.green__container p {
+   color: var(--global-color-white);
+}
+.green__container h3,
+.green__container h5 {
+    margin-bottom: 20px;
+    line-height: 1.2em;
+}
+.green__container h5 {
+    font-style: italic;
+}
+.green__container p {
+    font-size: 16px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #28a92b;
+}
+.box.active {
+  background-color: red;
+}
+
+.box-a {
+  background-color: #8d3dae;
+}
+
+.box-c {
+  background-color: #e26c16;
+}

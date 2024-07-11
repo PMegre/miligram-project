@@ -1,0 +1,40 @@
+.site__header {
+    position: fixed;
+    width: 100%;
+    padding: 50px;
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+.site__header .main__logo {
+    width: 220px;
+    fill: white;
+    overflow: visible;
+}
+.site__header .mini__logo {
+    width: 50px;
+    fill: white;
+    transition: all 0.3s ease !important;
+    overflow: visible;
+    position: absolute;
+    left: 60px;
+}
+.site__header .main__nav {
+    width: fit-content;
+}
+.site__header .main__nav ul {
+    padding: 0;
+    margin: 0 ;
+    list-style: none;
+}
+
+.site__header .main__nav ul li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.site__header .main__nav ul li a {
+    color: var(--global-color-grey);
+    text-decoration: none;
+    text-transform: lowercase;
+}
