@@ -2,9 +2,11 @@ import React from 'react';
 import HeadlineRotator from '../components/HeadlineRotator';
 import '../styles/Home.css';
 
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const Home = () => {
 
