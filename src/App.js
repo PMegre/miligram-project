@@ -1,13 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react';
-
 import './App.css';
+
 //Components
 import Header from "./components/Header";
 import Router from "./router/Router";
 import CustomCursor from './components/CustomCursor';
 
 import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollSmoother , ScrollTrigger);
 
 function App() {
 
-  useEffect(() => {
+  useGSAP(() => {
 
         const smoother = ScrollSmoother.create({
             smooth: 2,
@@ -28,8 +28,7 @@ function App() {
         // Additional ScrollTrigger setup if needed
 
         return () => {
-            smoother.kill();
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            smoother.revert();
         };
   }, []);
 

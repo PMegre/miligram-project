@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,8 +12,7 @@ const Logo = () => {
     const tl1 = useRef(null);
     const tl2 = useRef(null);
 
-    useGSAP(
-        () => {
+    useGSAP(() => {
 
             gsap.set(".mini-letters", { opacity: 0 })
             gsap.set(".mini-dot", { scale: 0 })
@@ -26,29 +26,11 @@ const Logo = () => {
                 .timeline({ paused: true })
                 .to(".mini-letters", { opacity: 1, duration: .3, transformOrigin: "center center", ease: 'back.out' })
                 .to(".mini-dot", { scale: 1, duration: 0.3, stagger: -0.2, ease: 'back.out' }, '-=.2')
-                
-            ScrollTrigger.create({
-                trigger: container.current,
-                start: "+=800px center",
-                end: "+=800px center",
-                markers: true,
-                onEnter: () => {
-                    tl1.current.reverse().then(() => {
-                        gsap.delayedCall(.1, () => tl2.current.play());
-                    });
-                },
-                onLeaveBack: () => {
-                    tl2.current.reverse().then(() => {
-                        gsap.delayedCall(.1, () => tl1.current.play());
-                    });
-                },
-                scrub: true
-            })
+        },
 
-            return () => {
-                tl1.current.kill();
-                tl2.current.kill();
-            }
+        () => {
+            tl1.current.kill();
+            tl2.current.kill(); 
         },
 
         { scope: container }

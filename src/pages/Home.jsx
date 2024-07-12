@@ -3,17 +3,35 @@ import HeadlineRotator from '../components/HeadlineRotator';
 import '../styles/Home.css';
 
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 const Home = () => {
+
+     useGSAP(() => {
+
+        const smoother = ScrollSmoother.create({
+            smooth: 2,
+            smoothTouch: 0.1,
+            effects: true,
+            wrapper: '#smooth-wrapper',
+            content: '#smooth-content',
+        });
+
+        // Additional ScrollTrigger setup if needed
+
+        return () => {
+            smoother.revert();
+        };
+  }, []);
 
     return (
         <>
             <main>
-                <section className='d-flex align-items-center vh-100 default__padding white__container panel'>
+                <section className='d-flex align-items-center vh-100 default__padding white__container first__section panel'>
                     <div className='fist__section__wrapper'>
                         <h3>
                             <span className="text__wrapper">Real </span>

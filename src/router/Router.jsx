@@ -12,6 +12,7 @@ import Recruitment from '../pages/Recruitment';
 import Footer from '../components/Footer';
 
 const Router = () => {
+
     return (
         <>
             <TransitionProvider>
