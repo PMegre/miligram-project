@@ -8,34 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Logo = () => {
 
-    const container = useRef(null);
-    const tl1 = useRef(null);
-    const tl2 = useRef(null);
-
-    useGSAP(() => {
-
-            gsap.set(".mini-letters", { opacity: 0 })
-            gsap.set(".mini-dot", { scale: 0 })
-
-            tl1.current = gsap
-                .timeline()
-                .from(".letters", { opacity: 0, x: -10, duration: .2, stagger: -0.1, transformOrigin: "center center", ease: 'back.out' })
-                .from(".dot", { scale: 0, duration: 0.7, stagger: -0.2, ease: 'back.out', transformOrigin: "center center" }, '-=.5')
-
-            tl2.current = gsap
-                .timeline({ paused: true })
-                .to(".mini-letters", { opacity: 1, duration: .3, transformOrigin: "center center", ease: 'back.out' })
-                .to(".mini-dot", { scale: 1, duration: 0.3, stagger: -0.2, ease: 'back.out' }, '-=.2')
-        },
-
-        () => {
-            tl1.current.kill();
-            tl2.current.kill(); 
-        },
-
-        { scope: container }
-    );
-
     return (
         <div ref={container}>
             <svg className='main__logo' viewBox="0 0 200 60">
@@ -65,17 +37,6 @@ const Logo = () => {
                 </g>
                 <g id="dot-top" className='dot'>
                     <path d="M77.6,2.4c.9-.9,2-1.4,3.2-1.4s2.3.5,3.2,1.4c.9.9,1.4,2,1.4,3.3s-.5,2.4-1.4,3.3c-.9.9-2,1.4-3.2,1.4s-2.3-.5-3.2-1.4c-.9-.9-1.4-2-1.4-3.3s.5-2.4,1.4-3.3" />
-                </g>
-            </svg>
-            <svg className='mini__logo' viewBox="0 0 44.3 60">
-                <g id="mini-letter-1" className='mini-letters'>
-                    <path d="M10,17.9v3.9h.1c.2-.4.5-.8.9-1.3.4-.5.8-1,1.4-1.4.6-.5,1.3-.9,2.2-1.2.8-.3,1.9-.5,3-.5s2.3.1,3.2.4c.8.3,1.5.6,2.1,1.1.6.4,1,.9,1.3,1.4.3.5.7,1,.9,1.6.5-1,1.1-1.8,1.8-2.4.7-.6,1.3-1,2-1.3.7-.3,1.3-.5,1.9-.6.6,0,1.1-.1,1.5-.1,2,0,3.6.3,4.7.9,1.1.6,1.9,1.4,2.4,2.2.5.9.8,1.8.9,2.7,0,1,.1,1.8.1,2.4v15.1h1.9v.8h-10v-.8h1.5v-17.2c0-1.6-.3-2.7-.8-3.6-.6-.8-1.5-1.2-2.8-1.2s-.9.1-1.5.3c-.6.2-1.1.6-1.7,1-.5.4-1,1-1.4,1.7-.4.7-.6,1.6-.6,2.6v16.4h1.5v.8h-9.7v-.8h1.6v-17.6c0-1.6-.3-2.8-1-3.4-.7-.6-1.4-1-2.3-1-1.4,0-2.7.6-3.8,1.9-.3.4-.5.7-.8,1.1-.2.4-.4.8-.5,1.3-.1.5-.2,1.1-.3,1.7,0,.6,0,1.4,0,2.4v13.5h1.5v.8H1.7v-.8h1.9v-22.2h-1.9v-.8h8.4Z" />
-                </g>
-                <g id="mini-dot-bottom" className='mini-dot'>
-                    <path d="M2.3,50.3c.9-.9,2-1.4,3.2-1.4s2.3.5,3.2,1.4c.9.9,1.4,2,1.4,3.3s-.5,2.4-1.4,3.3c-.9.9-2,1.4-3.2,1.4s-2.3-.5-3.2-1.4c-.9-.9-1.4-2-1.4-3.3s.5-2.4,1.4-3.3" />
-                </g>
-                <g id="mini-dot-top" className='mini-dot'>
-                    <path d="M35.5,2.7c.9-.9,2-1.4,3.2-1.4s2.3.5,3.2,1.4c.9.9,1.4,2,1.4,3.3s-.5,2.4-1.4,3.3c-.9.9-2,1.4-3.2,1.4s-2.3-.5-3.2-1.4c-.9-.9-1.4-2-1.4-3.3s.5-2.4,1.4-3.3" />
                 </g>
             </svg>
         </div>

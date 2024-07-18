@@ -3,12 +3,11 @@
     width: 100%;
     padding: 50px;
     z-index: 100;
-    mix-blend-mode: difference;
 }
 
 .site__header .main__logo {
     width: 220px;
-    fill: white;
+    fill: black;
     overflow: visible;
 }
 .site__header .mini__logo {
